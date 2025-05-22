@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CS1 Tutor Feedback Tool</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Code syntax highlighting library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/atom-one-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/languages/python.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/languages/sql.min.js"></script>
+</head>
+<body>
+    <header class="navbar">
+        <h1>CS1 Tutor Feedback Tool</h1>
+    </header>
+    
+    <!-- Language Selector -->
+    <div class="language-selector-container">
+        <div class="language-selector">
+            <label for="language-select">Select Assignment Language:</label>
+            <select id="language-select">
+                <option value="python" selected>Python</option>
+                <option value="sql">SQL</option>
+            </select>
+        </div>
+    </div>
+    
+    <main class="container">
+        <!-- Left Column -->
+        <div class="column">
+            <!-- Python Assignment Panel -->
+            <div class="panel python-content" id="python-assignment-panel">
+                <div class="tab-controls">
+                    <button class="tab-btn active" data-tab="python-spec-content">Assignment Specification</button>
+                    <button class="tab-btn" data-tab="python-rubric-content">Marking Rubric</button>
+                </div>
+                
+                <!-- Python Assignment Spec -->
+                <div class="tab-content active" id="python-spec-content">
+                    <h2>Assignment Specification</h2>
+                    <div class="assignment-details">
+                        <h3>Temperature Converter</h3>
+                        <p>Create a program that converts temperatures between Celsius and Fahrenheit. The program should:</p>
+                        <ol>
+                            <li>Allow users to convert from Celsius to Fahrenheit</li>
+                            <li>Allow users to convert from Fahrenheit to Celsius</li>
+                            <li>Track conversion history</li>
+                            <li>Display a menu for users to select options</li>
+                            <li>Handle invalid inputs appropriately</li>
+                        </ol>
+                        <p><strong>Formulas to use:</strong></p>
+                        <ul>
+                            <li>Celsius to Fahrenheit: F = (C × 9/5) + 32</li>
+                            <li>Fahrenheit to Celsius: C = (F - 32) × 5/9</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Python Rubric -->
+                <div class="tab-content" id="python-rubric-content">
+                    <h2>Marking Rubric</h2>
+                    <p><strong>Total: 25 points</strong></p>
+                    <table class="rubric-table">
+                        <tr>
+                            <th>Category</th>
+                            <th>Points</th>
+                            <th>Criteria</th>
+                        </tr>
+                        <tr>
+                            <td rowspan="3">Functionality</td>
+                            <td>6</td>
+                            <td>Conversion Accuracy (C to F: 3, F to C: 3)</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>User Interface (Menu: 2, I/O clarity: 3)</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>History Feature (Storage: 2, Display: 2)</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="3">Code Quality</td>
+                            <td>3</td>
+                            <td>Structure (Functions: 2, Organization: 1)</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Error Handling</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Style (Variable names: 2, Comments: 2)</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            
+            <!-- SQL Assignment Panel -->
+            <div class="panel sql-content" id="sql-assignment-panel">
+                <div class="tab-controls">
+                    <button class="tab-btn active" data-tab="sql-spec-content">Assignment Specification</button>
+                    <button class="tab-btn" data-tab="sql-rubric-content">Marking Rubric</button>
+                </div>
+                
+                <!-- SQL Assignment Spec -->
+                <div class="tab-content active" id="sql-spec-content">
+                    <h2>Assignment Specification</h2>
+                    <div class="assignment-details">
+                        <h3>Restaurant Data Analysis</h3>
+                        <p>Write SQL queries to extract and analyze information from a restaurant database containing tables for menu items, orders, and customers.</p>
+                        <p><strong>Required Queries:</strong></p>
+                        <ol>
+                            <li>List all menu items with a price over $7.50, ordered by price (descending)</li>
+                            <li>Find the total number of orders placed by each customer</li>
+                            <li>Calculate the average order amount</li>
+                            <li>Find the most popular menu item (most frequently ordered)</li>
+                            <li>List all orders placed on March 15, 2023 with their total amounts</li>
+                        </ol>
+                        <p><strong>Database Structure (given):</strong></p>
+                        <ul>
+                            <li><code>menu_items</code>: id, name, price, category</li>
+                            <li><code>customers</code>: id, name, email</li>
+                            <li><code>orders</code>: id, customer_id, order_date, total_amount</li>
+                            <li><code>order_items</code>: order_id, menu_item_id, quantity</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- SQL Rubric -->
+                <div class="tab-content" id="sql-rubric-content">
+                    <h2>Marking Rubric</h2>
+                    <p><strong>Total: 25 points</strong></p>
+                    <table class="rubric-table">
+                        <tr>
+                            <th>Category</th>
+                            <th>Points</th>
+                            <th>Criteria</th>
+                        </tr>
+                        <tr>
+                            <td rowspan="3">Query Correctness</td>
+                            <td>10</td>
+                            <td>All queries return correct results</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>Proper use of joins and relationships</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>Correct filtering conditions</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="2">Efficiency</td>
+                            <td>3</td>
+                            <td>Efficient query structure</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Proper use of indexes and query optimization</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            
+            <!-- Feedback Panel -->
+            <div class="panel">
+                <h2>Feedback</h2>
+                <textarea id="feedback-text" placeholder="Write Feedback Here"></textarea>
+                <button id="submit-btn" class="submit-btn">Submit Feedback</button>
+            </div>
+        </div>
+        
+        <!-- Right Column -->
+        <div class="column">
+            <!-- Python Samples Panel -->
+            <div class="panel python-content">
+                <!-- Code Sample Tabs -->
+                <div class="tab-controls">
+                    <button class="tab-btn active" data-tab="sample1">Sample 1</button>
+                    <button class="tab-btn" data-tab="sample2">Sample 2</button>
+                    <button class="tab-btn" data-tab="sample3">Sample 3</button>
+                </div>
+                
+                <!-- Code Sample Containers -->
+                <div class="tab-content active" id="sample1">
+                    <div class="code-header">
+                        <h2>Student Submission 1</h2>
+                        <button class="download-btn" data-file="sample1.py">Download</button>
+                    </div>
+                    <div class="code-container">
+                        <pre><code class="language-python" id="code-sample1"></code></pre>
+                    </div>
+                </div>
+                
+                <div class="tab-content" id="sample2">
+                    <div class="code-header">
+                        <h2>Student Submission 2</h2>
+                        <button class="download-btn" data-file="sample2.py">Download</button>
+                    </div>
+                    <div class="code-container">
+                        <pre><code class="language-python" id="code-sample2"></code></pre>
+                    </div>
+                </div>
+                
+                <div class="tab-content" id="sample3">
+                    <div class="code-header">
+                        <h2>Student Submission 3</h2>
+                        <button class="download-btn" data-file="sample3.py">Download</button>
+                    </div>
+                    <div class="code-container">
+                        <pre><code class="language-python" id="code-sample3"></code></pre>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- SQL Samples Panel -->
+            <div class="panel sql-content">
+                <!-- Code Sample Tabs -->
+                <div class="tab-controls">
+                    <button class="tab-btn active" data-tab="sql-sample1">Sample 1</button>
+                    <button class="tab-btn" data-tab="sql-sample2">Sample 2</button>
+                    <button class="tab-btn" data-tab="sql-sample3">Sample 3</button>
+                </div>
+                
+                <!-- Code Sample Containers -->
+                <div class="tab-content active" id="sql-sample1">
+                    <div class="code-header">
+                        <h2>Student Submission 1</h2>
+                        <button class="download-btn" data-file="sql-sample1.sql">Download</button>
+                    </div>
+                    <div class="code-container">
+                        <pre><code class="language-sql" id="code-sql-sample1"></code></pre>
+                    </div>
+                </div>
+                
+                <div class="tab-content" id="sql-sample2">
+                    <div class="code-header">
+                        <h2>Student Submission 2</h2>
+                        <button class="download-btn" data-file="sql-sample2.sql">Download</button>
+                    </div>
+                    <div class="code-container">
+                        <pre><code class="language-sql" id="code-sql-sample2"></code></pre>
+                    </div>
+                </div>
+                
+                <div class="tab-content" id="sql-sample3">
+                    <div class="code-header">
+                        <h2>Student Submission 3</h2>
+                        <button class="download-btn" data-file="sql-sample3.sql">Download</button>
+                    </div>
+                    <div class="code-container">
+                        <pre><code class="language-sql" id="code-sql-sample3"></code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <script src="scripts.js"></script>
+</body>
+</html>
